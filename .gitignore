@@ -1,7 +1,8 @@
-# Allow only caption text and repository documentation.
+# Allow caption text, documentation, and the explicitly selected preview only.
 *
 !*/
 !*.txt
 !/.gitignore
 !/README.md
 !/README.zh-CN.md
+!/assets/Preview.png

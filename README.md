@@ -12,9 +12,15 @@ Thank you to the original creator for providing the costume and pose reference g
 
 ## About
 
-English natural-language descriptions of poses and costumes for image generation models and tools that support natural-language prompts. They are not tied to a specific model. Use them on their own, combine them with other prompts, or pair them with character LoRAs. This repository contains only TXT captions and documentation, with no images, thumbnails, or image indexes.
+English natural-language descriptions of poses and costumes for image generation models and tools that support natural-language prompts. They are not tied to a specific model. Use them on their own, combine them with other prompts, or pair them with character LoRAs. This repository contains TXT captions and documentation, plus one gallery-page screenshot in `assets/Preview.png` for documentation preview. It does not include the downloadable source image dataset or an image index.
 
 These descriptions were written by observing reference images. They are not the original creator's generation prompts or official prompt exports from any model or platform. Materials are described according to their visible appearance.
+
+## Preview
+
+![Pose gallery page preview](assets/Preview.png)
+
+Gallery-page screenshot supplied for documentation preview; source: [AI Pose Gallery](https://ai-pose-gallery.pages.dev/).
 
 ## Contents and NSFW Notice
 
@@ -35,9 +41,53 @@ Body Position → Legs → Arms → Torso → Head → Camera Angle → Framing
 
 Costume descriptions cover visible colors, cuts, materials, and accessories without binding them to a particular character identity.
 
+### ChatGPT: Character + Costume + Pose References
+
+In a ChatGPT conversation with image generation available, attach three reference images and explain each image's role:
+
+1. **Character image**: the character's identity and appearance.
+2. **Costume image**: the clothing, colors, and accessories to use.
+3. **Pose image**: the body position, camera angle, and framing to follow.
+
+You can also paste the matching costume and pose captions to clarify details. Example prompt:
+
+```text
+Generate a new image using these references:
+Image 1 defines the character. Preserve the character's recognizable appearance.
+Image 2 defines the outfit. Use its clothing, colors, and accessories.
+Image 3 defines the pose. Follow its body position, camera angle, and framing.
+Costume details: [paste costume caption]
+Pose details: [paste pose caption]
+Scene and lighting: [describe the environment and lighting]
+```
+
+Review the result and request targeted changes as needed. Reference matching is not guaranteed. See [OpenAI's image generation guide](https://learn.chatgpt.com/docs/image-generation) for using multiple reference images.
+
+### ComfyUI: Character LoRA Prompt + Caption + Environment and Lighting
+
+Load a character LoRA compatible with your base model using your workflow's LoRA loader. In the positive prompt / text-encoding node, combine:
+
+```text
+[character LoRA trigger words and character description]
++ [costume caption]
++ [pose caption]
++ [environment and lighting]
+```
+
+The `+` signs show how to combine the parts; replace the placeholders with actual text and join them into a coherent prompt. Use one or both caption types as needed. Example:
+
+```text
+my_character, an adult woman with short black hair.
+An ivory knit top with a pink pleated miniskirt and white sneakers.
+Standing with one hand on the hip, head slightly tilted, three-quarter view, full-body framing.
+On a quiet garden path, soft late-afternoon sunlight, gentle shadows.
+```
+
+Replace `my_character` with your LoRA's actual trigger. Trigger words alone do not load a LoRA: select and connect it in the workflow, then adjust its strength as needed. Adapt caption length and wording to your model.
+
 ## Reference Images and Download Rules
 
-**The source websites prohibit redistributing, reposting, or reselling their images, including original-resolution and edited images. This repository provides no images. Publishing these text captions does not grant permission to redistribute the images.**
+**The source websites prohibit redistributing, reposting, or reselling their images, including original-resolution and edited images. The downloadable source image dataset is not included; the documentation preview is a gallery-page screenshot. Publishing these text captions does not grant permission to redistribute the images.**
 
 As of October 30, 2026, both source websites also explicitly prohibit bulk downloading, including automated retrieval with tools. They allow individual images to be used as generation references under their stated terms. Free use does not mean permission to bulk download or redistribute. Always check the source websites for their latest terms.
 
