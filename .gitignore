@@ -1,0 +1,6 @@
+# Allow only caption text and repository documentation.
+*
+!*/
+!*.txt
+!/.gitignore
+!/README.md
