@@ -24,10 +24,14 @@ Gallery-page screenshot supplied for documentation preview; source: [AI Pose Gal
 
 ## Contents and NSFW Notice
 
-- `姿势图库_POSE_1439/`: 1,714 TXT files, including caption variants from the original local collection. The number 1439 is part of the reference collection's name.
-- `服装图库_COSTUME_1407/`: 1,407 TXT files, organized by costume category and retaining the original IDs.
+- `姿势图库_Pose_Captions_1439/`: 1,714 TXT files, including caption variants from the original local collection. The number 1439 is part of the reference collection's name.
+- `服装图库_Costume_Captions_1407/`: 1,407 TXT files, organized by costume category and retaining the original IDs.
 
 **The two-person pose prompts include NSFW (adult) content. Review and select prompts yourself, use them responsibly, and follow applicable laws and the rules of your chosen platform.**
+
+### Bilingual Folder Names
+
+Both collection and category folders use Chinese and English names. Pose categories cover full-body single-person poses (sexy and standard), upper-body single-person poses, and two-person poses. Costume categories cover spring, summer, autumn, winter, lingerie, party dresses, swimwear, and sexy outfits. Caption filenames and IDs are unchanged.
 
 ## How to Use
 
@@ -43,7 +47,7 @@ Costume descriptions cover visible colors, cuts, materials, and accessories with
 
 ### Caption File Locations
 
-Open a category subfolder inside `姿势图库_POSE_1439/` or `服装图库_COSTUME_1407/` to find the TXT captions. Keep each locally obtained reference image next to its matching caption, with the same filename stem:
+Open a category subfolder inside `姿势图库_Pose_Captions_1439/` or `服装图库_Costume_Captions_1407/` to find the TXT captions. Keep each locally obtained reference image next to its matching caption, with the same filename stem:
 
 ```text
 category-folder/
