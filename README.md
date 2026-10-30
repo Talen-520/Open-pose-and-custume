@@ -1,52 +1,58 @@
-# Natural Language Pose & Costume Prompts / 自然语言姿势与服装提示词
+# Natural Language Pose & Costume Prompts
 
-## Credit / 原作者与参考来源
+**English** | [简体中文](README.zh-CN.md)
 
-- 参考图库作者：[ギア / @giaaibusi](https://x.com/giaaibusi)
-- 服装参考：[AI Costume Gallery / COSTUME-DB-01](https://ai-costume-gallery.pages.dev/)
-- 姿势参考：[AI Pose Gallery / POSE-DB-01](https://ai-pose-gallery.pages.dev/)
+## Credits and References
 
-感谢原作者提供服装与姿势参考图库。本项目与原作者及任何图像生成模型或平台无隶属关系，未获其背书。来源署名不代表已取得原作者对本项目的授权。
+- Reference gallery creator: [ギア / @giaaibusi](https://x.com/giaaibusi)
+- Costume references: [AI Costume Gallery / COSTUME-DB-01](https://ai-costume-gallery.pages.dev/)
+- Pose references: [AI Pose Gallery / POSE-DB-01](https://ai-pose-gallery.pages.dev/)
 
-## 项目说明
+Thank you to the original creator for providing the costume and pose reference galleries. This project is not affiliated with or endorsed by the creator or any image generation model or platform. Attribution does not imply that the creator has authorized this project.
 
-英文自然语言姿势与服装描述，适用于支持自然语言提示词的图像生成模型和工具，不限于特定模型。可独立使用、组合提示词，也可搭配人物 LoRA。仓库只收录 TXT 标注和本说明，不含图片、缩略图或图片索引。
+## About
 
-这些是根据参考图观察编写的英文描述，不是原作者的原始生成提示词，也不是任何模型或平台官方导出的提示词。材质按可见外观描述。
+English natural-language descriptions of poses and costumes for image generation models and tools that support natural-language prompts. They are not tied to a specific model. Use them on their own, combine them with other prompts, or pair them with character LoRAs. This repository contains only TXT captions and documentation, with no images, thumbnails, or image indexes.
 
-## 内容与 NSFW 提醒
+These descriptions were written by observing reference images. They are not the original creator's generation prompts or official prompt exports from any model or platform. Materials are described according to their visible appearance.
 
-- `姿势图库_POSE_1439/`：1,714 个 TXT，含原目录中的变体标注；1439 为参考图集名称。
-- `服装图库_COSTUME_1407/`：1,407 个 TXT，按服装类别保存，保留原编号。
+## Contents and NSFW Notice
 
-**双人姿势提示词包含 NSFW（成人向）内容。请自行筛选并合理使用，遵守适用法律及所用平台的规定。**
+- `姿势图库_POSE_1439/`: 1,714 TXT files, including caption variants from the original local collection. The number 1439 is part of the reference collection's name.
+- `服装图库_COSTUME_1407/`: 1,407 TXT files, organized by costume category and retaining the original IDs.
 
-## 使用方法
+**The two-person pose prompts include NSFW (adult) content. Review and select prompts yourself, use them responsibly, and follow applicable laws and the rules of your chosen platform.**
 
-按编号选择 TXT，直接作为提示词使用，或与人物描述组合，再按需补充场景、光线与构图。使用人物 LoRA 时，可按所用模型的要求加入触发词。
+## How to Use
 
-文本采用通用英文自然语言，不依赖专用标签或特定模型语法。可作为任何支持自然语言图像生成的工具的提示词素材；不同模型对描述的理解与还原程度可能不同，可按需调整措辞和长度。
+Choose a TXT file by ID and use its text directly as a prompt, or combine it with a character description. Add a scene, lighting, and framing as needed. If you use a character LoRA, include its trigger words as required by your model.
 
-姿势描述按 Body Position → Legs → Arms → Torso → Head → Camera Angle → Framing 的顺序组织。服装描述涵盖可见颜色、剪裁、材质和配饰，不绑定特定人物身份。
+The captions use ordinary English rather than specialized tags or model-specific syntax. They can serve as prompt material for any image generation tool that supports natural language. Interpretation and visual fidelity vary by model, so adjust wording and length as needed.
 
-## 参考图片与下载规则
+Pose descriptions follow this order:
 
-**原站禁止再分发、转载或转售图片，包括原尺寸图片和加工后的图片。本仓库不提供图片；文字标注的发布不代表图片的再分发许可。**
+Body Position → Legs → Arms → Torso → Head → Camera Angle → Framing
 
-截至 2026-10-30，两个来源网站还明确禁止批量下载（包括工具自动获取），允许按站点规定逐张用于生成参考。免费使用不等于允许批量下载或再分发，请以原站最新说明为准。
+Costume descriptions cover visible colors, cuts, materials, and accessories without binding them to a particular character identity.
 
-按站点许可逐张获取的图片，可在本地放入对应打标词文件夹，并保持与 TXT 相同的文件名（仅扩展名不同），例如 `SPR-0001.png` 与 `SPR-0001.txt`。图片仅供本地参考，请勿提交到本仓库；`.gitignore` 已限制跟踪的文件类型。
+## Reference Images and Download Rules
 
-### 使用 Agent 协助整理
+**The source websites prohibit redistributing, reposting, or reselling their images, including original-resolution and edited images. This repository provides no images. Publishing these text captions does not grant permission to redistribute the images.**
 
-如果你使用的 Codex、Muse、Grok 等 Agent 支持本地文件操作，可以让它协助整理你已按许可取得的图片。例如：
+As of October 30, 2026, both source websites also explicitly prohibit bulk downloading, including automated retrieval with tools. They allow individual images to be used as generation references under their stated terms. Free use does not mean permission to bulk download or redistribute. Always check the source websites for their latest terms.
 
-> 将我已按来源网站许可取得的姿势和服装图片，按编号放入对应的 TXT 打标词文件夹，保持图片与 TXT 同名，不上传或再分发图片。
+Images obtained individually in accordance with the source websites' permissions can be placed locally in the corresponding caption folders. Match each image's filename to its TXT caption, changing only the extension—for example, `SPR-0001.png` and `SPR-0001.txt`. Keep images local and do not commit them to this repository. The `.gitignore` restricts which file types are tracked.
 
-**只有在取得作者明确的批量下载授权后，才使用以下指令；它不适用于原站当前的默认许可：**
+### Organizing Images with an Agent
+
+If your chosen agent, such as Codex, Muse, or Grok, supports local file operations, you can ask it to organize images you have already obtained with permission. For example:
+
+> Organize the pose and costume images I have obtained in accordance with the source websites' permissions into the corresponding TXT caption folders by ID. Keep each image and caption under the same filename, and do not upload or redistribute the images.
+
+**Use the following instruction only after obtaining explicit permission from the creator to bulk download. It is not permitted under the source websites' current default terms:**
 
 ```text
 download all pose costume images from https://ai-costume-gallery.pages.dev/ and https://ai-pose-gallery.pages.dev/
 ```
 
-使用前仍需确认所选 Agent 的联网、下载及本地文件能力，以及可能产生的服务费用。
+Check your agent's network, download, and local file capabilities, as well as any service fees, before using it.
