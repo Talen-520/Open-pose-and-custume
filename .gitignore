@@ -1,4 +1,4 @@
-# Allow caption text, documentation, and the explicitly selected preview only.
+# Allow caption text, documentation, and the explicitly selected previews only.
 *
 !*/
 !*.txt
@@ -6,3 +6,4 @@
 !/README.md
 !/README.zh-CN.md
 !/assets/Preview.png
+!/assets/preview2.png
