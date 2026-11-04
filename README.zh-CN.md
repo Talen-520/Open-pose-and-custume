@@ -35,15 +35,15 @@
 
 ## Anima 打标版本
 
-12 个分类目录均新增一个带 `_Anima_Tagging` 后缀的同级文件夹。例如：
+12 个分类均有两个同级版本：`_Natural_Language` 保存原英文自然语言描述，`_Anima_Tagging` 保存 Anima 标签混合版本。例如：
 
 ```text
 姿势图库_Pose_Captions_1439/
-├── 01_全身单人性感_Full_Body_Single_Sexy/
+├── 01_全身单人性感_Full_Body_Single_Sexy_Natural_Language/
 └── 01_全身单人性感_Full_Body_Single_Sexy_Anima_Tagging/
 ```
 
-新增 **3,121 份 TXT**：姿势 1,714 份、服装 1,407 份。原自然语言标注仍保留在原目录中。
+新增 **3,121 份 TXT**：姿势 1,714 份、服装 1,407 份。原自然语言标注保留在 `_Natural_Language` 目录中。
 
 每份 Anima TXT 第一行为小写、逗号分隔的内容标签，后面保留原英文描述。这种混合格式依据 [Anima 对标签与自然语言的支持](https://huggingface.co/circlestone-labs/Anima)。整段使用可保留动作、人物关系、配色与配饰细节；仅需要标签时可只取第一行。这些是实用内容标签，不保证每个短语都是 booru 官方词条。
 

@@ -35,15 +35,15 @@ Both collection and category folders use Chinese and English names. Pose categor
 
 ## Anima Tagging Variants
 
-Each of the 12 category folders now has a sibling with the `_Anima_Tagging` suffix. For example:
+Each of the 12 categories has two sibling folders: `_Natural_Language` for the original English descriptions and `_Anima_Tagging` for the Anima hybrid tag variants. For example:
 
 ```text
 姿势图库_Pose_Captions_1439/
-├── 01_全身单人性感_Full_Body_Single_Sexy/
+├── 01_全身单人性感_Full_Body_Single_Sexy_Natural_Language/
 └── 01_全身单人性感_Full_Body_Single_Sexy_Anima_Tagging/
 ```
 
-The new folders contain **3,121 additional TXT files**: 1,714 pose variants and 1,407 costume variants. The original natural-language captions remain available in the original folders.
+The new folders contain **3,121 additional TXT files**: 1,714 pose variants and 1,407 costume variants. The original natural-language captions are in the `_Natural_Language` folders.
 
 Each Anima TXT contains lowercase, comma-separated content tags on the first line, followed by the original English description. This hybrid format follows [Anima's support for tags and natural language](https://huggingface.co/circlestone-labs/Anima). Use the complete text to preserve detailed poses, relationships, colors, and accessories, or take only the first line when you need tags. These are practical content tags, not a guarantee that every phrase is an official booru tag.
 
