@@ -33,6 +33,29 @@
 
 素材主目录和分类子目录均采用中英双语命名。姿势分为全身单人性感、全身单人标准、上半身单人和双人姿势；服装分为春装、夏装、秋装、冬装、内衣、派对礼服、泳装和性感服装。打标词文件名与编号保持不变。
 
+## Anima 打标版本
+
+12 个分类目录均新增一个带 `_Anima_Tagging` 后缀的同级文件夹。例如：
+
+```text
+姿势图库_Pose_Captions_1439/
+├── 01_全身单人性感_Full_Body_Single_Sexy/
+└── 01_全身单人性感_Full_Body_Single_Sexy_Anima_Tagging/
+```
+
+新增 **3,121 份 TXT**：姿势 1,714 份、服装 1,407 份。原自然语言标注仍保留在原目录中。
+
+每份 Anima TXT 第一行为小写、逗号分隔的内容标签，后面保留原英文描述。这种混合格式依据 [Anima 对标签与自然语言的支持](https://huggingface.co/circlestone-labs/Anima)。整段使用可保留动作、人物关系、配色与配饰细节；仅需要标签时可只取第一行。这些是实用内容标签，不保证每个短语都是 booru 官方词条。
+
+```text
+solo, full body, three quarter view, standing, legs apart, hand on hip, head tilt
+Standing with weight on one hip; feet apart, one knee relaxed and heel lifted; one hand on the hip and the other resting on top of the head, elbows out; torso slightly curved sideways; head tilted gently to one side; three-quarter view; full-body framing.
+```
+
+新版本基于已有、已检查的 caption 整理，并对全部 12 类进行图片抽查。不固定人物身份，不添加画师名或质量分数前缀。人物 LoRA 触发词、场景、光影和具体模型的生成设置请按需另加。已有 `_nsfw` 文字变体保留并标记 `nsfw`，不会统一加上 `safe` 标签。
+
+275 份双人文字变体仍没有独立同名图片。本地为个人使用复制的图片继续被 Git 排除，本次仓库仅新增 Anima TXT 标注。已检查文件配对及内容保留情况，尚未在 Anima 中实测出图效果。
+
 ## 使用方法
 
 按编号选择 TXT，直接作为提示词使用，或与人物描述组合，再按需补充场景、光线与构图。使用人物 LoRA 时，可按所用模型的要求加入触发词。
