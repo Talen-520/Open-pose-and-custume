@@ -24,8 +24,8 @@ Gallery-page screenshot supplied for documentation preview; source: [AI Pose Gal
 
 ## Contents and NSFW Notice
 
-- `姿势图库_Pose_Captions_1439/`: 1,714 TXT files, including caption variants from the original local collection. The number 1439 is part of the reference collection's name.
-- `服装图库_Costume_Captions_1407/`: 1,407 TXT files, organized by costume category and retaining the original IDs.
+- `姿势图库_Pose_Captions_1439/`: 1,714 reference captions per format, including variants from the original local collection. The number 1439 is part of the reference collection's name.
+- `服装图库_Costume_Captions_1407/`: 1,407 reference captions per format, organized by costume category and retaining the original IDs.
 
 **The two-person pose prompts include NSFW (adult) content. Review and select prompts yourself, use them responsibly, and follow applicable laws and the rules of your chosen platform.**
 
@@ -35,12 +35,13 @@ Both collection and category folders use Chinese and English names. Pose categor
 
 ## Anima Tagging Variants
 
-Each of the 12 categories has two sibling folders: `_Natural_Language` for the original English descriptions and `_Anima_Tagging` for the Anima hybrid tag variants. For example:
+Each of the 12 categories has three sibling folders: `_Natural_Language` for English descriptions, `_Anima_Tagging` for hybrid tags and prose, and `_Illustrious_Tagging` for tag lists. For example:
 
 ```text
 姿势图库_Pose_Captions_1439/
 ├── 01_全身单人性感_Full_Body_Single_Sexy_Natural_Language/
-└── 01_全身单人性感_Full_Body_Single_Sexy_Anima_Tagging/
+├── 01_全身单人性感_Full_Body_Single_Sexy_Anima_Tagging/
+└── 01_全身单人性感_Full_Body_Single_Sexy_Illustrious_Tagging/
 ```
 
 The new folders contain **3,121 additional TXT files**: 1,714 pose variants and 1,407 costume variants. The original natural-language captions are in the `_Natural_Language` folders.
@@ -55,6 +56,20 @@ Standing with weight on one hip; feet apart, one knee relaxed and heel lifted; o
 These variants were derived from the existing reviewed captions, with visual spot checks across all 12 categories. They do not add fixed character identities, artist names, or quality/score prefixes. Add your character LoRA trigger, scene, lighting, and model-specific generation settings separately. Existing `_nsfw` text variants are retained and marked `nsfw`; no blanket `safe` tag is added.
 
 The 275 text-only two-person variants still have no separate matching image. Image copies created for personal local use remain excluded from Git. This repository adds only the Anima TXT variants. File pairing and content preservation were checked; generation results have not been tested in Anima.
+
+## Illustrious Tagging Variants
+
+The `_Illustrious_Tagging` sibling folders contain **3,121 additional TXT files**: 1,714 pose captions and 1,407 costume captions. Together, the three formats provide **9,363 TXT files** for the same underlying collection; this is not a new set of reference images.
+
+Each Illustrious file is a single line of comma-separated content tags. It uses common Danbooru-style terms, with short descriptive pose phrases where a compact tag would lose body geometry or the relationship between two people. The original full English paragraph is not appended. These are practical prompt components, not a guarantee that every phrase is an official booru tag. See the [Illustrious model card](https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.0) for the model's tag-based prompting support.
+
+```text
+solo, full body, three-quarter view, standing, legs apart, hand on own hip, head tilt, contrapposto, hand on own head, heel up
+```
+
+Combine the caption with your character LoRA trigger and appearance tags, then add environment and lighting tags in your ComfyUI positive prompt. Choose subject tags such as `1girl` or `1boy` yourself when appropriate; the reusable captions do not fix character gender or identity. Quality tags and generation settings depend on your particular Illustrious checkpoint and should be added separately as needed.
+
+The original `_Natural_Language` and `_Anima_Tagging` files remain unchanged. Existing `_nsfw` variants are retained; the 275 text-only variants still have no separate matching images. Image copies are local only and excluded from Git. Captions were adapted from the existing reviewed descriptions and checked for pairing, nonempty content, and duplicate tags, with visual spot checks. Generation results have not been tested in Illustrious. For detailed relationships that tags simplify, consult the matching natural-language version.
 
 ## How to Use
 

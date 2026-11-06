@@ -24,8 +24,8 @@
 
 ## 内容与 NSFW 提醒
 
-- `姿势图库_Pose_Captions_1439/`：1,714 个 TXT，含原目录中的变体标注；1439 为参考图集名称。
-- `服装图库_Costume_Captions_1407/`：1,407 个 TXT，按服装类别保存，保留原编号。
+- `姿势图库_Pose_Captions_1439/`：每种格式 1,714 份参考标注，含原目录中的变体；1439 为参考图集名称。
+- `服装图库_Costume_Captions_1407/`：每种格式 1,407 份参考标注，按服装类别保存，保留原编号。
 
 **双人姿势提示词包含 NSFW（成人向）内容。请自行筛选并合理使用，遵守适用法律及所用平台的规定。**
 
@@ -35,12 +35,13 @@
 
 ## Anima 打标版本
 
-12 个分类均有两个同级版本：`_Natural_Language` 保存原英文自然语言描述，`_Anima_Tagging` 保存 Anima 标签混合版本。例如：
+12 个分类均有三个同级版本：`_Natural_Language` 保存英文自然语言描述，`_Anima_Tagging` 保存标签与原文混合版本，`_Illustrious_Tagging` 保存标签列表。例如：
 
 ```text
 姿势图库_Pose_Captions_1439/
 ├── 01_全身单人性感_Full_Body_Single_Sexy_Natural_Language/
-└── 01_全身单人性感_Full_Body_Single_Sexy_Anima_Tagging/
+├── 01_全身单人性感_Full_Body_Single_Sexy_Anima_Tagging/
+└── 01_全身单人性感_Full_Body_Single_Sexy_Illustrious_Tagging/
 ```
 
 新增 **3,121 份 TXT**：姿势 1,714 份、服装 1,407 份。原自然语言标注保留在 `_Natural_Language` 目录中。
@@ -55,6 +56,20 @@ Standing with weight on one hip; feet apart, one knee relaxed and heel lifted; o
 新版本基于已有、已检查的 caption 整理，并对全部 12 类进行图片抽查。不固定人物身份，不添加画师名或质量分数前缀。人物 LoRA 触发词、场景、光影和具体模型的生成设置请按需另加。已有 `_nsfw` 文字变体保留并标记 `nsfw`，不会统一加上 `safe` 标签。
 
 275 份双人文字变体仍没有独立同名图片。本地为个人使用复制的图片继续被 Git 排除，本次仓库仅新增 Anima TXT 标注。已检查文件配对及内容保留情况，尚未在 Anima 中实测出图效果。
+
+## Illustrious 打标版本
+
+新增同级 `_Illustrious_Tagging` 文件夹，共 **3,121 份 TXT**：姿势 1,714 份、服装 1,407 份。三个格式合计 **9,363 份 TXT**，对应同一套参考素材，并非新增参考图。
+
+每份 Illustrious 标注为单行、逗号分隔的内容标签，采用常见 Danbooru 风格词汇；对于无法用简短标签准确表达的身体结构和双人关系，保留简短动作描述词组，不附原英文段落。这些是实用提示词组件，不保证每个短语都是 booru 官方词条。模型的标签提示词支持可参阅 [Illustrious 官方模型说明](https://huggingface.co/OnomaAIResearch/Illustrious-XL-v1.0)。
+
+```text
+solo, full body, three-quarter view, standing, legs apart, hand on own hip, head tilt, contrapposto, hand on own head, heel up
+```
+
+在 ComfyUI 正向提示词中组合人物 LoRA 触发词、人物外观标签、对应 caption，再补充环境和光影标签。`1girl`、`1boy` 等主体标签请按实际需求自行加入，通用 caption 不固定人物性别或身份。质量标签和生成设置因所用 Illustrious 底模而异，请按需另外添加。
+
+原 `_Natural_Language` 和 `_Anima_Tagging` 文件保持不变。已有 `_nsfw` 变体继续保留，275 份纯文字变体仍没有独立同名图片。图片副本仅供本地使用，不加入 Git。本版本基于已有、已检查的描述整理，已核验配对、空文件和重复标签，并进行图片抽查；尚未实测 Illustrious 出图效果。标签简化的复杂动作关系可对照同名自然语言版本查看。
 
 ## 使用方法
 
